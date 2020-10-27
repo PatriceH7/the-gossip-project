@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/welcome/:first_name', to: 'static_pages#welcome', as: 'welcoming'
   get '/team', to: 'static_pages#team'
   get '/contact', to: 'static_pages#contact'
+  get '/:potin', to: 'static_pages#potin', as: 'potin'
 end

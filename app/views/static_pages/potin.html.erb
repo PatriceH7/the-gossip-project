@@ -1,0 +1,10 @@
+<h1>Voici les détails du potin numéro : <%= @chosen_gossip %>  </h1>
+
+<p>Son titre : <%= Gossip.find(@chosen_gossip).title %></p>
+
+<p>Son auteur : <%= Gossip.find(@chosen_gossip).user.first_name %></p>
+
+<p>Son contenu : <%= Gossip.find(@chosen_gossip).content %></p>
+
+<p>Il a été créé le : <%= Gossip.find(@chosen_gossip).created_at %></p>
+

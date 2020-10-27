@@ -17,7 +17,7 @@ class StaticPagesController < ApplicationController
   	end
 
   	def potin 
-  
+  		@chosen_gossip = params[:potin]
   	end
 
 end

@@ -1,2 +1,11 @@
-<h1>The Gossip Project !</h1>
+<h1>Bienvenue sur The Gossip Project !</h1>
+
+<h2>Voici la liste des potins :</h2>
+<div>	<% Gossip.count.times do |i| %>
+	<div>Prénom de l'auteur : <%= Gossip.find(i + 1).user.first_name %><br />
+	     Titre du potin : <%= Gossip.find(i + 1).title %>
+	</div><br />
+	<% end %>
+</div>
+
 

@@ -19,10 +19,5 @@ body
 {
   font-family: arial,sans-serif;
   font-size: 13px;
-
-.border-flex {
-  border: 2px solid red;
-  margin: 2px;
-  padding: 2px;
 }
 

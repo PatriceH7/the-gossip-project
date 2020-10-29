@@ -1,0 +1,20 @@
+
+<h1>Voici les détails du potin numéro : <%= @gossip.id %>  </h1>
+
+<div class="card" style="width: 36rem;">
+  <div class="card-body">
+    <h5 class="card-title"> Titre : <%= @gossip.title %></h5>
+    <p class="card-text"> Contenu : <%= @gossip.content %></p>
+    <h6 class="card-subtitle mb-2 text-muted"> Auteur : <%= @gossip.user.first_name %></h6>
+    <%= link_to "Voir l'auteur", users_path(@user), class:"btn btn-primary" %>
+    <h6></h6>
+    <h6 class="card-subtitle mb-2 text-muted"> Ville : <%= @gossip.user.city.name %></h6>
+ 	<%= link_to "Voir les potins de sa ville", city_path(@gossip.user.city), class:"btn btn-primary" %>
+ 	<h6></h6>
+ 	<h6 class="card-subtitle mb-2 text-muted"> Créé le : <%= @gossip.created_at %></h6>
+
+  </div>
+</div>
+
+<%= link_to "Pour revenir à la page d'accueil", gossips_path, class:"btn btn-primary" %>
+

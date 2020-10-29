@@ -4,14 +4,13 @@ Rails.application.routes.draw do
   get '/welcome/:first_name', to: 'static_pages#welcome', as: 'welcoming'
   get '/team', to: 'static_pages#team'
   get '/contact', to: 'static_pages#contact'
-  get '/:potin', to: 'static_pages#potin', as: 'potin'
+  #get '/:potin', to: 'static_pages#potin', as: 'potin'
 
-
-  # ces routes existent déjà avec resources
-  #post '/gossips', to: 'gossips#create'
-  #get '/gossips/new', to: 'gossips#new'
-
-
-  resources :gossips, only: [:new, :create]
+  resources :welcomes
+  resources :teams, only: (:index)
+  resources :contacts, only: (:index)
+  resources :users
+  resources :gossips
+  resources :cities
 
 end

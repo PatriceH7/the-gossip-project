@@ -1,37 +1,36 @@
-<html>
-
-  <body>
+<div class="card">
+  <div class="card-body">
 
   <h1>Formulaire de création d'un nouveau potin</h1>
 
-   <% flash.each do |type, msg| %>
-      <div class="alert alert-danger" role="alert">
-        <%= msg %>
-      </div>
-    <% end %>
-
     <%= form_tag gossips_path(action: 'create'), method: "post" do %>
 
-      <%= label_tag 'Titre' %>
+      <%= label_tag 'Titre' %></br>
       <%= text_field_tag 'title', @gossip.title %>
       <br /> <br />
 
-      <%= label_tag 'Contenu' %>
+      <%= label_tag 'Contenu' %></br>
       <%= text_area_tag 'content', @gossip.content %>
       <br /> <br />
+
+      <%= submit_tag "Creation du potin" %>
+
+    <% end %>
+
+      </br>
 
       <% if @gossip.errors.any? %>
         <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
           <ul>
             <% @gossip.errors.full_messages.each do |message| %>
+              <div class="alert alert-danger" role="alert">
               <li><%= message %></li>
+              </div>
             <% end %>
+            
           </ul>
+
       <% end %>
 
-      <%= submit_tag "Creation du potin", class: "btn btn-primary" %>
-      
-    <% end %>
-
-  </body>
-</html>
+  </div>
+</div>

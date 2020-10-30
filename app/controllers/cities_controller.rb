@@ -1,12 +1,10 @@
 class CitiesController < ApplicationController
 
-	def index
-		@city = City.all 
-	end
-
+	
 	def show
+		@id = params[:id]
 		@city = City.find(params[:id])
+		@user_city = @city.name
 	end
-
-
+	
 end
